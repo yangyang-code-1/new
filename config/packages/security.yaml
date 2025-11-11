@@ -9,10 +9,10 @@ security:
             memory:
                 users:
                     admin:
-                        password: '$2y$13$7b6l0z0xq6pQbJfY8i4O0u1k9sE2jFQ1W8qfT6YpVZ0b1nEw6u1q' # password
+                        password: '$2y$13$.ZOB/icqROcusfZ.TjjiCe7ccqpZKJwNA4F2YR/evbJmjZA6e6kc.' # password
                         roles: [ 'ROLE_ADMIN' ]
                     user:
-                        password: '$2y$13$Yx4oP0q6tN7bLkZ3sV2hF.O7JmC8rQ2xA5nH9zR1cU0w8sE6p3k.' # password
+                        password: '$2y$13$.ZOB/icqROcusfZ.TjjiCe7ccqpZKJwNA4F2YR/evbJmjZA6e6kc.' # password
                         roles: [ 'ROLE_USER' ]
     firewalls:
         dev:
@@ -32,7 +32,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the first access control that matches will be used
     access_control:
-        - { path: ^/dashboard, roles: ROLE_USER }
+        - { path: ^/dashboard, roles: [ROLE_USER, ROLE_ADMIN] }
         # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
